@@ -293,3 +293,8 @@ button { font: inherit; color: inherit; }
 .faq-toc a:hover { background: var(--slate-soft); }
 .faq-doc h2 { scroll-margin-top: 24px; }
 .faq-doc code { background: var(--paper-2); padding: 1px 6px; border-radius: 4px; font-size: .92em; }
+
+/* Big enough to tap on a phone (44px), however short the link text. */
+.doc-bar a, .doc-foot a { display: inline-flex; align-items: center; min-height: 44px; }
+.doc-foot { align-items: center; row-gap: 0; }
+.footer-small a { display: inline-block; padding: 10px 0; }
