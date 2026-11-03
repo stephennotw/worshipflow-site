@@ -224,16 +224,22 @@ button { font: inherit; color: inherit; }
   body { overflow-x: clip; }
   .r-text { font-size: 16px; }
   .sheet-ui { padding: 16px; }
-  .split { display: block; }
+  /* Phones: the name, the opening line and the store buttons first, the projected slide after them, so
+     the buttons are on the first screen even with the browser's bars showing. */
+  .split { display: flex; flex-direction: column; }
+  .read { display: contents; }
+  .hero { order: 1; }
+  .stage { order: 2; }
+  .menu-field, .week { order: 3; }
   /* Short enough that the store buttons are on the first screen, even on a small phone. */
-  .stage { position: relative; height: 46svh; min-height: 300px; padding: 12px 12px 0; }
+  .stage { position: relative; height: 56svh; min-height: 320px; padding: 0 12px; }
   .layer[data-layer="list"], .layer[data-layer="chords"] { display: none; }
   .slide { padding: 64px 16px 12px; }
   .verse .ml { font-size: 17px; line-height: 1.5; }
   .verse .tr { font-size: 15px; margin-top: .8em; }
   .script-toggle { top: 12px; left: 12px; right: 12px; justify-content: space-between; }
   .script-toggle button { padding: 8px 10px; }
-  .hero { min-height: 0; padding: 0 var(--m) 64px; display: flex; flex-direction: column; }
+  .hero { min-height: 0; padding: 0 var(--m) 32px; display: flex; flex-direction: column; }
   .nav { display: none; }
   /* The same links as the desktop bar, in a row above the stage. */
   /* One row; on a narrow phone it scrolls sideways inside itself, never the page. */
@@ -241,13 +247,13 @@ button { font: inherit; color: inherit; }
   .mnav::-webkit-scrollbar { display: none; }
   .mnav a { flex: none; color: var(--stage-soft); text-decoration: none; padding: 6px 0; }
   .mnav .nav-action { color: var(--amber); }
-  .wordmark { position: relative; right: auto; bottom: auto; order: -1; margin-top: 10px; font-size: 17vw; z-index: 2; }
+  .wordmark { position: relative; right: auto; bottom: auto; order: -1; margin-top: 4px; font-size: 17vw; z-index: 2; }
   .hero-text { position: static; max-width: none; margin-top: 16px; display: flex; flex-direction: column; }
   /* The store buttons straight under the line that says what this is; the second sentence after them. */
   .hero-text .badges { order: 2; margin-top: 20px; flex-wrap: nowrap; }
   .hero-text .badges img { height: 44px; }
   .hero-text .badges img.gp { height: 65px; margin: -10.5px -8px; }
-  .hero-text .hero-sub { order: 3; margin-top: 24px; }
+  .hero-text .hero-sub { order: 3; margin-top: 20px; }
   .lede { font-size: 22px; }
   .menu-field, .week { padding: var(--gap) var(--m); }
   .sheet { padding: 48px 20px; }
