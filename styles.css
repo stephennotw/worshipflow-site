@@ -43,8 +43,9 @@ button { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
 ::selection { background: var(--amber); color: var(--ink); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.skip { position: absolute; left: var(--m); top: -60px; background: var(--amber); color: var(--ink); padding: 10px 16px; z-index: 10; text-decoration: none; }
-.skip:focus { top: 12px; }
+.skip { position: absolute; left: var(--m); top: 12px; background: var(--amber); color: var(--ink); padding: 10px 16px; z-index: 10; text-decoration: none; }
+/* Only there for keyboard and screen-reader users: out of sight until it has focus. */
+.skip:not(:focus) { width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* ---------- The split stage ---------- */
 .split { display: grid; grid-template-columns: 47% 53%; }
