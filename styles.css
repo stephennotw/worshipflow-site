@@ -275,3 +275,9 @@ button { font: inherit; color: inherit; }
 .doc a { color: var(--slate); font-weight: 600; text-underline-offset: 3px; }
 .doc-foot { background: var(--stage); color: var(--stage-soft); padding: 40px var(--m); font-size: var(--t-small); display: flex; gap: 24px; flex-wrap: wrap; }
 .doc-foot a { color: var(--stage-ink); }
+
+.faq-toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.faq-toc a { background: var(--paper-2); color: var(--ink); text-decoration: none; font-weight: 500; font-size: var(--t-small); padding: 8px 14px; border-radius: 999px; }
+.faq-toc a:hover { background: var(--slate-soft); }
+.faq-doc h2 { scroll-margin-top: 24px; }
+.faq-doc code { background: var(--paper-2); padding: 1px 6px; border-radius: 4px; font-size: .92em; }
