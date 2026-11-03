@@ -21,7 +21,12 @@ slide.querySelectorAll('.script-toggle button').forEach(b => b.addEventListener(
 
 // ---- The stage changes with the section beside it.
 const layers = [...document.querySelectorAll('.stage .layer')];
-const show = name => layers.forEach(l => l.classList.toggle('is-on', l.dataset.layer === name));
+// On a phone the stage is not pinned beside the text, so it always shows the projected slide.
+const phone = matchMedia('(max-width: 760px)');
+const show = name => {
+  const shown = phone.matches ? 'slide' : name;
+  layers.forEach(l => l.classList.toggle('is-on', l.dataset.layer === shown));
+};
 const stageObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) show(e.target.dataset.stage); });
 }, { rootMargin: '-45% 0px -45% 0px' });
