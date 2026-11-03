@@ -225,21 +225,29 @@ button { font: inherit; color: inherit; }
   .r-text { font-size: 16px; }
   .sheet-ui { padding: 16px; }
   .split { display: block; }
-  .stage { position: relative; height: 64svh; padding: 12px 12px 0; }
+  /* Short enough that the store buttons are on the first screen, even on a small phone. */
+  .stage { position: relative; height: 46svh; min-height: 300px; padding: 12px 12px 0; }
   .layer[data-layer="list"], .layer[data-layer="chords"] { display: none; }
-  .slide { padding: 72px 20px 32px; }
-  .verse .ml { font-size: 19px; }
-  .verse .tr { font-size: 16px; }
+  .slide { padding: 64px 16px 12px; }
+  .verse .ml { font-size: 17px; line-height: 1.5; }
+  .verse .tr { font-size: 15px; margin-top: .8em; }
   .script-toggle { top: 12px; left: 12px; right: 12px; justify-content: space-between; }
   .script-toggle button { padding: 8px 10px; }
   .hero { min-height: 0; padding: 0 var(--m) 64px; display: flex; flex-direction: column; }
   .nav { display: none; }
   /* The same links as the desktop bar, in a row above the stage. */
-  .mnav { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 16px var(--m) 4px; background: var(--stage); font-size: var(--t-small); font-weight: 500; }
-  .mnav a { color: var(--stage-soft); text-decoration: none; padding: 6px 0; }
-  .mnav .nav-action { color: var(--amber); margin-left: auto; }
-  .wordmark { position: relative; right: auto; bottom: auto; order: -1; margin-top: -.42em; font-size: 17vw; z-index: 2; }
-  .hero-text { position: static; max-width: none; margin-top: 24px; }
+  /* One row; on a narrow phone it scrolls sideways inside itself, never the page. */
+  .mnav { display: flex; gap: 16px; padding: 12px var(--m) 2px; background: var(--stage); font-size: var(--t-small); font-weight: 500; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+  .mnav::-webkit-scrollbar { display: none; }
+  .mnav a { flex: none; color: var(--stage-soft); text-decoration: none; padding: 6px 0; }
+  .mnav .nav-action { color: var(--amber); }
+  .wordmark { position: relative; right: auto; bottom: auto; order: -1; margin-top: 10px; font-size: 17vw; z-index: 2; }
+  .hero-text { position: static; max-width: none; margin-top: 16px; display: flex; flex-direction: column; }
+  /* The store buttons straight under the line that says what this is; the second sentence after them. */
+  .hero-text .badges { order: 2; margin-top: 20px; flex-wrap: nowrap; }
+  .hero-text .badges img { height: 44px; }
+  .hero-text .badges img.gp { height: 65px; margin: -10.5px -8px; }
+  .hero-text .hero-sub { order: 3; margin-top: 24px; }
   .lede { font-size: 22px; }
   .menu-field, .week { padding: var(--gap) var(--m); }
   .sheet { padding: 48px 20px; }
