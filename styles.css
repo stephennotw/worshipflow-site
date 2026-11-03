@@ -26,7 +26,7 @@
 
   --ease: cubic-bezier(.2, .7, .2, 1);
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --ml: "Baloo Chettan 2", "Noto Sans Malayalam", sans-serif;
+  --ml: "Noto Sans Malayalam", "Malayalam Sangam MN", sans-serif;   /* Baloo Chettan breaks conjuncts under lang="ml" */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -59,8 +59,8 @@ button { font: inherit; color: inherit; }
 .verses { display: grid; width: 100%; }
 .verse { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity .3s; }
 .verse.is-on { opacity: 1; visibility: inherit; transition: opacity 1s var(--ease); }
-.verse .ml { font: 600 clamp(20px, 2.1vw, 34px)/1.5 var(--ml); color: var(--stage-ink); }
-.verse .tr { font: 500 clamp(16px, 1.55vw, 25px)/1.55 var(--sans); color: var(--amber); margin-top: 1.2em; }
+.verse .ml { font: 500 clamp(20px, 2vw, 32px)/1.6 var(--ml); color: var(--stage-ink); }
+.verse .tr { font: 400 clamp(17px, 1.6vw, 26px)/1.55 var(--sans); color: var(--stage-ink); margin-top: 1.2em; }
 .mode-native .tr, .mode-latin .ml { display: none; }
 .mode-latin .tr { margin-top: 0; color: var(--stage-ink); font-size: clamp(20px, 2vw, 32px); }
 .script-toggle { position: absolute; top: 20px; left: 20px; display: flex; background: var(--stage-3); padding: 4px; border-radius: 999px; }
