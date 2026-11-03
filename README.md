@@ -1,6 +1,6 @@
 # worshipflow-site
 
-The website for WorshipFlow: https://stephennotw.github.io/worshipflow-site/
+The website for WorshipFlow: https://getworshipflow.app/ (custom domain set by the `CNAME` file).
 
 Plain HTML, CSS and JavaScript with no build step; GitHub Pages serves `main` from the root.
 
